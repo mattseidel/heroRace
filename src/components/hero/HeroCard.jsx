@@ -6,7 +6,7 @@ import { HeroSearch } from './HeroSearch'
 export const HeroCard = ({ getByName, hero }) => {
 
 
-    const [heroSelected, setHeroSelected] = useState({
+    const [heroSelected] = useState({
         "id": "71",
         "name": "Batman II",
         "powerstats": {
