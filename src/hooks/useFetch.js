@@ -23,10 +23,9 @@ export const useFetch = () => {
     const getByName = (name = 'batman') => {
         clearError()
         search(name)
-            .then(data =>
-                data ? JSON.parse(data) : {}
-            ).then(data => {
+            .then(data => {
                 console.log(data);
+                setHero(data)
             })
     }
 
