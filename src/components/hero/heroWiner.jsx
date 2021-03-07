@@ -1,11 +1,11 @@
 
 import React from 'react'
 import { Modal, ModalBody, ModalHeader } from 'reactstrap'
+import PropTypes from 'prop-types'
+
+
 
 export const HeroWiner = ({ modal, toggle, winer }) => {
-
-
-
     return (
         <Modal isOpen={modal} toggle={toggle}>
             {winer?.draw ?
@@ -33,4 +33,10 @@ export const HeroWiner = ({ modal, toggle, winer }) => {
 
         </Modal>
     )
+}
+
+HeroWiner.propTypes = {
+    modal: PropTypes.bool.isRequired,
+    toggle: PropTypes.func.isRequired,
+    winer: PropTypes.object.isRequired
 }

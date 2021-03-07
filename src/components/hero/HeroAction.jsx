@@ -1,7 +1,8 @@
-
 import React, { useState } from 'react'
 import { Button, ButtonGroup, Card, Container } from 'reactstrap'
 import { HeroWiner } from './heroWiner'
+import PropTypes from 'prop-types'
+
 
 export const HeroAction = ({ attacker, deffender }) => {
 
@@ -34,4 +35,9 @@ export const HeroAction = ({ attacker, deffender }) => {
             <HeroWiner modal={open} toggle={() => setOpen(!open)} winer={winer} />
         </Container>
     )
+}
+
+HeroAction.propTypes = {
+    attacker: PropTypes.object.isRequired,
+    deffender: PropTypes.object.isRequired
 }

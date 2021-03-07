@@ -1,12 +1,14 @@
 import React from 'react'
 import { Form, Input, InputGroup, InputGroupText } from 'reactstrap'
 import { useForm } from '../../hooks/useForm'
+import PropTypes from 'prop-types'
 
-export const HeroSearch = ({filter}) => {
+
+export const HeroSearch = ({ filter }) => {
 
     const [{ name }, onChange] = useForm({ name: '' })
 
-    const onSubmit=(e)=>{
+    const onSubmit = (e) => {
         e.preventDefault()
         filter(name)
     }
@@ -19,4 +21,8 @@ export const HeroSearch = ({filter}) => {
             </InputGroup>
         </Form>
     )
+}
+
+HeroSearch.propTypes = {
+    filter: PropTypes.func.isRequired
 }

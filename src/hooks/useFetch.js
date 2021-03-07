@@ -29,7 +29,6 @@ export const useFetch = () => {
         //         setHero(data)
         //     })
         setHeroArray(hero.filter(data => data.name.toLowerCase().includes(name.toLowerCase())))
-        console.log(heroArray);
     }
 
     return [heroArray, getByName]

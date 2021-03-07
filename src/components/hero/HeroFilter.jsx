@@ -1,5 +1,7 @@
 import React from 'react'
 import { Alert, ListGroup, ListGroupItem } from 'reactstrap'
+import PropTypes from 'prop-types'
+
 
 export const HeroFilter = ({ hero = [], changeHeroSelected }) => {
     return (
@@ -17,4 +19,9 @@ export const HeroFilter = ({ hero = [], changeHeroSelected }) => {
 
         </ListGroup>
     )
+}
+
+HeroFilter.propTypes = {
+    hero: PropTypes.array,
+    changeHeroSelected: PropTypes.func.isRequired
 }
