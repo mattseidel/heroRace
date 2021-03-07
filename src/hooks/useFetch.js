@@ -1,19 +1,21 @@
 import { useState } from "react";
-import { search } from '../helpers/http'
+import { hero } from "../data/hero";
+// import { search } from '../helpers/http'
+
 
 /**
  * Hook to comunicate the application to the API
  */
 export const useFetch = () => {
-    const [hero, setHero] = useState([])
-    const [error, setError] = useState({})
+    const [heroArray, setHeroArray] = useState([])
+    // const [error, setError] = useState({})
 
-    /**
-     * Reset the error
-     */
-    const clearError = () => {
-        setError({})
-    }
+    // /**
+    //  * Reset the error
+    //  */
+    // const clearError = () => {
+    //     setError({})
+    // }
 
 
     /**
@@ -21,14 +23,15 @@ export const useFetch = () => {
      *  @param {string} name hero name
      */
     const getByName = (name = 'batman') => {
-        clearError()
-        search(name)
-            .then(data => {
-                console.log(data);
-                setHero(data)
-            })
+        // clearError()
+        // search(name)
+        //     .then(data => {
+        //         setHero(data)
+        //     })
+        setHeroArray(hero.filter(data => data.name.toLowerCase().includes(name.toLowerCase())))
+        console.log(heroArray);
     }
 
-    return { hero, error, getByName }
+    return [heroArray, getByName]
 
 }
